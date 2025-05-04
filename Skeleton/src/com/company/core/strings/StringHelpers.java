@@ -23,8 +23,25 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Concatenates two String objects into one.
+     *
+     * @param string1 The first String
+     * @param string2 The second String
+     * @return A new String that is the concatenation of string1 and string2;
+     * returns null if both inputs are null
+     * @author Yordan Paskalev
+     */
     public static String concat(String string1, String string2) {
-        return null;
+        if (string1 == null && string2 == null) {
+            return null;
+        } else if (string1 == null) {
+            return string2;
+        } else if (string2 == null) {
+            return string1;
+        }
+
+        return string1 + string2;
     }
 
     /**
@@ -149,8 +166,21 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Reverses the characters in a given String.
+     *
+     * @param source The base String to be reversed
+     * @return A new String with characters in reverse order;
+     *
+     * @author Yordan Paskalev
+     */
     public static String reverse(String source) {
-        return null;
+        if (source == null) {
+            return null;
+        }
+
+        StringBuilder reversed = new StringBuilder(source);
+        return reversed.reverse().toString();
     }
 
     /**

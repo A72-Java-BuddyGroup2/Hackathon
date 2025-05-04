@@ -3,8 +3,26 @@ package com.company.core.arrays;
 @SuppressWarnings({"ManualArrayCopy", "ExplicitArrayFilling"})
 public class ArrayHelpers {
 
+    /**
+     * Adds a new element to the end of an integer array.
+     *
+     * @param source  The original array
+     * @param element The element to add
+     * @return A new array containing all elements of source plus the new element at the end
+     *
+     * @author Yordan Paskalev
+     */
     public static int[] add(int[] source, int element) {
-        return new int[1];
+        if (source == null) {
+            return new int[] { element };
+        }
+
+        int[] result = new int[source.length + 1];
+        for (int i = 0; i < source.length; i++) {
+            result[i] = source[i];
+        }
+        result[source.length] = element;
+        return result;
     }
 
     /**
