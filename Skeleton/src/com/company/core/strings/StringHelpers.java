@@ -52,8 +52,24 @@ public class StringHelpers {
         return 0;
     }
 
+    /**
+     * Finds the last index at which the specified <code>symbol</code> appears in the given <code>source</code> string.
+     *
+     * @param source The string to search in.
+     * @param symbol The character to find the last index of.
+     * @return The index of the last occurrence of <code>symbol</code> in <code>source</code>, or -1 if not found.
+     *
+     * @author Martin Dimitrov
+     */
     public static int lastIndexOf(String source, char symbol) {
-        return 0;
+        if (source.isEmpty()) return -1;
+
+        int strLen = source.length();
+        for (int i = 0; i < strLen; i++) {
+            if (symbol == source.charAt(i)) return i;
+        }
+
+        return -1;
     }
 
     /**
@@ -84,8 +100,34 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Pads the beginning of the given <code>source</code> string with the specified <code>paddingSymbol</code>
+     * until the total length reaches <code>length</code>. If the source is already equal to or longer than
+     * the specified length, it is returned unchanged.
+     *
+     * @param source The original string to pad.
+     * @param length The desired total length after padding.
+     * @param paddingSymbol The character to use for padding at the start.
+     * @return A new string padded at the start with <code>paddingSymbol</code> up to the specified length,
+     * or the original string if no padding is needed.
+     *
+     * @author Martin Dimitrov
+     */
     public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
+        if (source == null || source.isEmpty()) return "";
+
+        if (source.length() >= length) return source;
+
+        int paddingCount = length - source.length();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < paddingCount; i++) {
+            sb.append(paddingSymbol);
+        }
+
+        sb.append(source);
+
+        return sb.toString();
     }
 
     public static String repeat(String source, int times) {

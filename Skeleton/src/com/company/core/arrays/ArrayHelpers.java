@@ -80,16 +80,56 @@ public class ArrayHelpers {
         return result;
     }
 
+    /**
+     * Inserts the specified <code>element</code> into the given <code>source</code> array at the specified <code>index</code>,
+     * shifting all subsequent elements to the right.
+     *
+     * @param source The original array into which the element will be inserted.
+     * @param index The position (zero-based) at which to insert the element.
+     * @param element The value to insert into the array.
+     * @return A new array containing all elements of the original array, with <code>element</code> inserted at <code>index</code>.
+     *
+     * @author Martin Dimitrov
+     */
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] newArr = new int[source.length + 1];
+
+        for (int i = 0; i < index; i++) {
+            newArr[i] = source[i];
+        }
+
+        newArr[index] = element;
+
+        for (int i = index; i < source.length; i++) {
+            newArr[i + 1] = source[i];
+        }
+
+        return newArr;
     }
 
     public static boolean isValidIndex(int[] source, int index) {
         return false;
     }
 
+    /**
+     * Finds the last index at which the specified <code>target</code> appears in the given <code>source</code> array.
+     *
+     * @param source The array to search in.
+     * @param target The value to find the last index of.
+     * @return The last index at which <code>target</code> appears in <code>source</code>, or -1 if not found.
+     *
+     * @author Martin Dimitrov
+     */
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+        if (source.length == 0) return -1;
+
+        for (int i = source.length - 1; i >= 0; i--) {
+            if (source[i] == target) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 
     public static int[] removeAllOccurrences(int[] source, int element) {
