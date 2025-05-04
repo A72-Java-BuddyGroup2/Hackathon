@@ -32,8 +32,16 @@ public class StringHelpers {
     }
 
     public static String pad(String source, int length, char paddingSymbol) {
-        return null;
-
+        String temp= "";
+        int charsAmount = (length - source.length()) / 2;
+        for (int i = 0; i < charsAmount; i++) {
+            temp += paddingSymbol;
+        }
+        temp += source;
+        for (int i = 0; i < charsAmount; i++) {
+            temp += paddingSymbol;
+        }
+        return temp;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
@@ -42,7 +50,6 @@ public class StringHelpers {
 
     public static String padStart(String source, int length, char paddingSymbol) {
         return null;
-
     }
 
     public static String repeat(String source, int times) {
@@ -54,7 +61,7 @@ public class StringHelpers {
     }
 
     public static String section(String source, int start, int end) {
-        return null;
+        return source.substring(start,end + 1);
     }
 
     public static boolean startsWith(String source, char target) {
