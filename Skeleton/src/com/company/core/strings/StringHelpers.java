@@ -179,8 +179,14 @@ public class StringHelpers {
             return null;
         }
 
-        StringBuilder reversed = new StringBuilder(source);
-        return reversed.reverse().toString();
+        char[] chars = source.toCharArray();
+        String result = "";
+
+        for (int i = chars.length - 1; i >= 0; i--) {
+            result += chars[i];
+        }
+
+        return result;
     }
 
     /**
