@@ -58,7 +58,7 @@ public class StringHelpers {
     }
 
     public static boolean startsWith(String source, char target) {
-        return false;
+        return source.startsWith("" + target);
     }
 
 }
