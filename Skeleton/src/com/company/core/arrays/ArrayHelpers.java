@@ -33,7 +33,14 @@ public class ArrayHelpers {
     }
 
     public static int firstIndexOf(int[] source, int target) {
-        return 0;
+        int result = -1;
+        for (int i = 0; i < source.length; i++) {
+            if (source[i] == target){
+                result = i;
+                break;
+            }
+        }
+        return result;
     }
 
     public static int[] insert(int[] source, int index, int element) {
