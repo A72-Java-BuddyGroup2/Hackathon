@@ -31,6 +31,17 @@ public class StringHelpers {
         return 0;
     }
 
+    /**
+     * Adds <code>paddingSymbol</code> char to the start and end of a string <code>target</code> until desired
+     * <code>length</code> is achieved.
+     *
+     * @param source The base String
+     * @param length The desired length
+     * @param paddingSymbol The symbol to use for padding
+     * @return The resulting array in format ---Test---
+     *
+     * @author Kristiyan Tanchev
+     */
     public static String pad(String source, int length, char paddingSymbol) {
         String temp= "";
         int charsAmount = (length - source.length()) / 2;
@@ -60,10 +71,30 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Get a portion of the provided<code>String</code> starting from <code>int</code> index and ending at
+     * <code>int</code> index inclusive
+     *
+     * @param source The base String
+     * @param start The index of the first char to be included
+     * @param end The index of the last char to be included
+     * @return The resulting substring
+     *
+     * @author Kristiyan Tanchev
+     */
     public static String section(String source, int start, int end) {
         return source.substring(start,end + 1);
     }
 
+    /**
+     * Checks if a <code>String</code> is starting with a given char <code>target</code>
+     *
+     * @param source The base String
+     * @param target The char for checking
+     * @return true if the String source starts with char target; false otherwise
+     *
+     * @author Kristiyan Tanchev
+     */
     public static boolean startsWith(String source, char target) {
         return source.startsWith("" + target);
     }

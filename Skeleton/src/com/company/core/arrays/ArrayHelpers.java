@@ -32,6 +32,15 @@ public class ArrayHelpers {
 
     }
 
+    /**
+     * Finds <code>integer</code>'s first occurrence index in an <code>integer array</code>.
+     *
+     * @param source The integer array to search
+     * @param target The integer that we look for
+     * @return The index of the first occurrence of the target in source. If not found return -1
+     *
+     * @author Kristiyan Tanchev
+     */
     public static int firstIndexOf(int[] source, int target) {
         int result = -1;
         for (int i = 0; i < source.length; i++) {
