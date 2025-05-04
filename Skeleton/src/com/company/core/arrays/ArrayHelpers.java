@@ -7,12 +7,50 @@ public class ArrayHelpers {
         return new int[1];
     }
 
+    /**
+     * Inserts the specified <code>element</code> at the beginning of the <code>source</code> array,
+     * shifting existing elements one position to the right.
+     *
+     * @param source The original array into which the new element will be inserted at the start.
+     * @param element The new element to insert at the first position.
+     * @return A new array containing the element followed by the original source elements.
+     *
+     * @author Erkan Redzheb
+     */
     public static int[] addFirst(int[] source, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+        result[0] = element;
+        for (int i = 0; i < source.length; i++) {
+            result[i + 1] = source[i];
+        }
+        return result;
     }
 
+    /**
+     * Appends all elements from <code>elements</code> to the end of the <code>source</code> array.
+     *
+     * @param source The original array to which new elements will be appended.
+     * @param elements The additional elements to append to the source array.
+     * @return A new array containing all elements from the source array followed by the elements array.
+     *
+     * @author Erkan Redzheb
+     */
     public static int[] addAll(int[] source, int... elements) {
-        return new int[1];
+        int sourceLength = source.length;
+        int elementsLength = elements.length;
+        int[] result = new int[sourceLength + elementsLength];
+
+        // Copy source elements
+        for (int i = 0; i < sourceLength; i++) {
+            result[i] = source[i];
+        }
+
+        // Copy new elements
+        for (int i = 0; i < elementsLength; i++) {
+            result[sourceLength + i] = elements[i];
+        }
+
+        return result;
     }
 
     /**
@@ -32,9 +70,23 @@ public class ArrayHelpers {
         return false;
     }
 
-
+    /**
+     * Copies elements from <code>sourceArray</code> into <code>destinationArray</code>
+     * up to the specified <code>count</code>. If the destination array is larger,
+     * remaining positions will retain their default value (0).
+     *
+     * @param sourceArray The array from which elements will be copied.
+     * @param destinationArray The array into which elements will be copied.
+     * @param count The number of elements to copy; must not exceed the length of either array.
+     *
+     * @author Erkan Redzheb
+     */
     public static void copy(int[] sourceArray, int[] destinationArray, int count) {
+        int elementsToCopy = Math.min(Math.min(count, sourceArray.length), destinationArray.length);
 
+        for (int i = 0; i < elementsToCopy; i++) {
+            destinationArray[i] = sourceArray[i];
+        }
     }
 
     /**

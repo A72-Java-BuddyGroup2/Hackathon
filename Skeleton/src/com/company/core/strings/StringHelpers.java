@@ -48,8 +48,23 @@ public class StringHelpers {
         return false;
     }
 
+    /**
+     * Returns the index of the first occurrence of the specified <code>target</code> character
+     * in the <code>source</code> string. If the target character is not found, returns -1.
+     *
+     * @param source The string in which to search for the target character.
+     * @param target The character whose first occurrence index is to be found.
+     * @return The index of the first occurrence of the target character, or -1 if not found.
+     *
+     * @author Erkan Redzheb
+     */
     public static int firstIndexOf(String source, char target) {
-        return 0;
+        for (int i = 0; i < source.length(); i++) {
+            if (source.charAt(i) == target) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
