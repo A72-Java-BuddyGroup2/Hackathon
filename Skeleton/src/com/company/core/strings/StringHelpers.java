@@ -3,8 +3,20 @@ package com.company.core.strings;
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
 
+    /**
+     * Abbreviates a string using ellipses.
+     * @param source String - the string to modify
+     * @param maxLength int - Maximum length of the resulting string
+     * @return String - the abbreviated string
+     *
+     * @author Vasil Shopov
+     */
     public static String abbreviate(String source, int maxLength) {
-        return null;
+        if (maxLength >= source.length()) {
+            return source;
+        }
+
+        return source.substring(0, maxLength) + "...";
     }
 
     public static String capitalize(String source) {
@@ -15,7 +27,20 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Checks if source contains a symbol.
+     * @param source String - The string that gets checked
+     * @param symbol char - The character that's checked for
+     * @return boolean - 'true' if source contains the checked for symbol, otherwise 'false'.
+     *
+     * @author Vasil Shopov
+     */
     public static boolean contains(String source, char symbol) {
+        for (int i = 0; i < source.length(); i++) {
+            if (source.charAt(i) == symbol) {
+                return true;
+            }
+        }
         return false;
     }
 
