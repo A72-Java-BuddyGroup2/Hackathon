@@ -18,7 +18,7 @@ public class StringHelpers {
 
         return source.substring(0, maxLength) + "...";
     }
-
+    //.Todor
     public static String capitalize(String source) {
         return null;
     }
@@ -61,6 +61,7 @@ public class StringHelpers {
         return false;
     }
 
+    //.Todor
     public static boolean endsWith(String source, char target) {
         return false;
     }
