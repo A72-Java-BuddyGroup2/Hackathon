@@ -18,9 +18,38 @@ public class StringHelpers {
 
         return source.substring(0, maxLength) + "...";
     }
-    //.Todor
+
+    /**
+     * Capitalize the first letter of the source.
+     * @param source String - A input string that needs it's first letter capitalized.
+     *               If the first letter starts with a lowercase letter, it will be converted to uppercase.
+     *               If it's already uppercase or not a letter, it remains unchanged.
+     *               If the input is null or empty, it is return as-is.
+     * @return String - A new string with the first character capitalized and the rest unchanged.
+     *               Return the original input if it's null or empty.
+     * @author Todor Krushkov
+     */
     public static String capitalize(String source) {
-        return null;
+        if (source == null || source.isEmpty()) {
+            return source;
+        }
+
+        char firstChar = source.charAt(0);
+        char capitalizedFirst;
+
+        if (firstChar >= 'a' && firstChar <= 'z') {
+            capitalizedFirst = (char) (firstChar - ('a' - 'A'));
+        } else {
+            capitalizedFirst = firstChar;
+        }
+
+        String result = "" + capitalizedFirst;
+
+        for (int i = 1; i < source.length(); i++) {
+            result += source.charAt(i);
+        }
+
+        return result;
     }
 
     /**
@@ -61,9 +90,20 @@ public class StringHelpers {
         return false;
     }
 
-    //.Todor
+    /**
+     * Checks if the target is the last character of the source
+     * @param source String - The string to check if it is empty and if the target is it's last index.
+     * @param target char - The character check if it is the last index of the source.
+     * @return boolean - returns 'true' if the last character of the source is equal to the target, 'false' otherwise.
+     *
+     * @author Todor Krushkov
+     */
     public static boolean endsWith(String source, char target) {
-        return false;
+        if (source == null || source.isEmpty()) {
+            return false;
+        }
+
+        return source.charAt(source.length() - 1) == target;
     }
 
     /**

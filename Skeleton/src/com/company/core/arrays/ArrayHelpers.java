@@ -206,8 +206,29 @@ public class ArrayHelpers {
         return new int[1];
     }
 
-    //.Todor
+    /**
+     * Reverses the array
+     * @param arrayToReverse int[] - The array whose elements will be reversed in place.
+     * @return void - returns reversed version of the array
+     *
+     * @author Todor Krushkov
+     */
     public static void reverse(int[] arrayToReverse) {
+        if (arrayToReverse == null || arrayToReverse.length <= 1) {
+            return;
+        }
+
+        int start = 0;
+        int end = arrayToReverse.length - 1;
+
+        while (start < end) {
+            int temp = arrayToReverse[start];
+            arrayToReverse[start] = arrayToReverse[end];
+            arrayToReverse[end] = temp;
+
+            start++;
+            end--;
+        }
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
