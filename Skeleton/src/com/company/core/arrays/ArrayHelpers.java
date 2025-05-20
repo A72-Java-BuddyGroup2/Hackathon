@@ -1,4 +1,5 @@
 package com.company.core.arrays;
+import java.util.Arrays;
 
 @SuppressWarnings({"ManualArrayCopy", "ExplicitArrayFilling"})
 public class ArrayHelpers {
@@ -233,6 +234,13 @@ public class ArrayHelpers {
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
         return new int[1];
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = new int[5];
+        Arrays.fill(numbers, 7);
+
+        System.out.println(Arrays.toString(numbers)); // [7, 7, 7, 7, 7]
     }
 
 }
