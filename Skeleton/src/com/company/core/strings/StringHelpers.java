@@ -258,4 +258,23 @@ public class StringHelpers {
         return source.startsWith("" + target);
     }
 
+    public static String padEndStilyan(String input, int lenght, char padChar){
+        if(input.length() >= lenght){
+            return input;
+        }
+        StringBuilder sb = new StringBuilder(input);
+        while (sb.length() < lenght){
+            sb.append(padChar);
+        }
+        return sb.toString();
+    }
+
+    public  static String repatSD(String string,  int count){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < count; i++){
+            sb.append(string);
+        }
+        return  sb.toString();
+    }
+
 }
